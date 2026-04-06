@@ -12,11 +12,11 @@ import pandas as pd
 import numpy as np
 import matplotlib
 from seaborn.objects import KDE
-from torch import Use
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import seaborn as sns
 from scipy import stats
+from eda_report_tier2 import generate_eda_report
 
 
 def load_and_profile(filepath):
@@ -221,6 +221,13 @@ def run_hypothesis_tests(df):
         print("  Interpretation: There is a statistically significant difference in GPA across departments.\n")
     else:
         print("  Interpretation: There is no statistically significant difference in GPA across departments.\n")
+    #violin plot
+    plt.figure(figsize=(10, 6))
+    sns.violinplot(x="department", y="gpa", data=df)
+    plt.title("GPA Distribution Across Departments (Violin Plot)")    
+    plt.tight_layout()
+    plt.savefig("output/violin_plot.png")
+    plt.close()
 
 
 def main():
@@ -237,5 +244,6 @@ def main():
     plot_distributions(df)
     plot_correlations(df)
     run_hypothesis_tests(df)
+    generate_eda_report(df)
 if __name__ == "__main__":
     main()

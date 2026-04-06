@@ -36,7 +36,14 @@ there is a two missing values cloumns (commute_minutes and scholarship) we handl
 (see ![alt text](output/attendance_pct_distribution.png))
 - Box plots comparing GPA across departments show overlapping ranges and similar medians, suggesting comparable academic performance between departments.
 (see  ![alt text](output\gpa_by_department.png))
+- Box plots and violin plots comparing GPA across departments show
+overlapping ranges and similar medians, suggesting comparable
+academic performance between departments.
 
+The violin plot additionally reveals the full distribution density,
+confirming that GPA values follow similar shapes across departments
+and that no department shows a distinctly different performance pattern.
+(see ![alt text](output\violin_plot.png))
 ------
 
 ## 3. Correlation Analysis
@@ -84,10 +91,54 @@ No statistically significant GPA differences were found between departments.
 - Chi-square statistic = 13.9486
 - p-value = 0.3040
 - Degrees of freedom = 12
+## Tier 2
+
+An automated EDA report generator (eda_report.py) was implemented
+as a reusable module. The tool accepts any pandas DataFrame and
+automatically produces:
+
+- Data profile summary
+- Distribution plots for numeric variables
+- Correlation heatmap
+- Missing data visualization
+- Outlier detection using the IQR method
+
+The module was validated using test datasets with different
+structures to ensure robustness.
 
 The result is not statistically significant, indicating that
 scholarship status does not appear to be associated with
 academic department.
+## Tier 3
+
+A statistical inference analysis was conducted to evaluate the
+difference in GPA between students who completed an internship
+and those who did not.
+
+Confidence intervals were estimated using both parametric
+(t-test) and non-parametric (bootstrap resampling) methods.
+The resulting intervals were highly consistent, indicating
+stable and reliable estimates of the population means.
+
+Students with internships showed a higher mean GPA compared
+to students without internships, and the non-overlapping
+confidence interval ranges suggest a statistically meaningful
+difference between the groups.
+
+Power analysis was performed using the calculated effect size
+(Cohen’s d = 0.7061), estimating that approximately 33 samples
+per group are sufficient to reliably detect the observed effect
+in future studies.
+
+To validate statistical reliability, a simulation-based false
+positive rate test was conducted. The observed rate (0.052)
+closely matched the expected significance level (α = 0.05),
+confirming that the analysis pipeline is well calibrated and
+does not introduce inflated Type I error.
+
+Overall, Tier 3 moves the analysis from descriptive exploration
+to statistically supported conclusions.
+(See terminal output from `main.py` execution for numerical results.)
 
 ## 5. Key Takeaways
 - Study hours strongly influence GPA.

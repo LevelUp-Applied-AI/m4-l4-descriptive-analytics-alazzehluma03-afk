@@ -1,0 +1,2 @@
+num1: 0 outliers
+num2: 0 outliers
