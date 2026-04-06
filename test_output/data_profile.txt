@@ -1,0 +1,26 @@
+DATA PROFILE
+
+Shape: (5, 3)
+
+Data Types:
+a           int64
+b           int64
+category      str
+dtype: object
+
+Missing Values:
+a           0
+b           0
+category    0
+dtype: int64
+
+Descriptive Statistics:
+              a         b
+count  5.000000  5.000000
+mean   3.000000  3.000000
+std    1.581139  1.581139
+min    1.000000  1.000000
+25%    2.000000  2.000000
+50%    3.000000  3.000000
+75%    4.000000  4.000000
+max    5.000000  5.000000

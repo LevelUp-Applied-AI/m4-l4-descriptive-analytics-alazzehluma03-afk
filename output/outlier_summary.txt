@@ -1,0 +1,5 @@
+course_load: 0 outliers
+study_hours_weekly: 3 outliers
+gpa: 10 outliers
+attendance_pct: 10 outliers
+commute_minutes: 16 outliers

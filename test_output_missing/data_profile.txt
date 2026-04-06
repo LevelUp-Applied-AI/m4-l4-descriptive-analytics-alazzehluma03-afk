@@ -1,0 +1,24 @@
+DATA PROFILE
+
+Shape: (4, 2)
+
+Data Types:
+num1    float64
+num2    float64
+dtype: object
+
+Missing Values:
+num1    1
+num2    1
+dtype: int64
+
+Descriptive Statistics:
+           num1  num2
+count  3.000000   3.0
+mean   2.333333   2.0
+std    1.527525   1.0
+min    1.000000   1.0
+25%    1.500000   1.5
+50%    2.000000   2.0
+75%    3.000000   2.5
+max    4.000000   3.0

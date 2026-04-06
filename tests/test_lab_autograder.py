@@ -28,13 +28,13 @@ def test_distribution_plots_exist():
 
 
 def test_findings_report_exists():
-    assert Path("FINDINGS.md").exists(), "FINDINGS.md not found"
+    assert Path("Findings.md").exists(), "Findings.md not found"
 
 
 def test_findings_has_substance():
-    content = Path("FINDINGS.md").read_text()
+    content = Path("Findings.md").read_text()
     assert len(content) > 500, (
-        f"FINDINGS.md appears too short ({len(content)} chars) — "
+        f"Findings.md appears too short ({len(content)} chars) — "
         "write a substantive analysis"
     )
 
